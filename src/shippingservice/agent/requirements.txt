@@ -1,0 +1,6 @@
+langgraph>=0.2.0
+langchain-core>=0.2.0
+langchain-ollama>=0.1.0        
+grpcio>=1.62.0
+grpcio-tools>=1.62.0
+grpcio-health-checking>=1.62.0

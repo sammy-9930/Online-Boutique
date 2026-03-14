@@ -135,18 +135,10 @@ func run(port string) string {
 		grpc.StatsHandler(otelgrpc.NewServerHandler()))
 
 	svc := &productCatalog{}
-
 	err = loadCatalog(&svc.catalog)
 	if err != nil {
 		log.Fatalf("could not parse product catalog: %v", err)
 	}
-
-	svc.agent, err = NewProductCatalogAgent()
-	if err != nil {
-		log.Fatalf("could not initialize product catalog agent: %v", err)
-	}
-
-	log.Printf("product catalog agent initialized with model=%s", svc.agent.llmModel)
 
 	pb.RegisterProductCatalogServiceServer(srv, svc)
 	healthcheck := health.NewServer()
