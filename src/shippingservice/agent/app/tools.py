@@ -21,17 +21,8 @@ seeded = False
 def calculate_shipping_quote(items: list[dict]) -> dict[str, Any]:
     """
     Python equivalent of the Go shippingservice quote logic.
-
-    Go behavior:
-      CreateQuoteFromCount(count) -> CreateQuoteFromFloat(8.99)
-
-    So the shipping quote is always $8.99, regardless of item count.
-    Returns Money dict:
-      {"currency_code": "USD", "units": 8, "nanos": 990000000}
+    Always returns $8.99, regardless of item count.
     """
-    if not items:
-        raise ValueError("items list must not be empty")
-
     cost = 8.99
     units = int(cost)
     nanos = int(round((cost - units) * 1_000_000_000))

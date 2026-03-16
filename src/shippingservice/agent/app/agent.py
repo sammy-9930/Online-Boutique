@@ -276,14 +276,15 @@ def run_agent(request: str) -> dict[str, Any]:
     # (handles cases where the LLM stops without echoing the tool result)
     answer = ""
     for msg in reversed(final["messages"]):
-        if isinstance(msg, AIMessage) and msg.content:
+        if isinstance(msg, ToolMessage) and msg.content:
             answer = msg.content
             break
     if not answer:
         for msg in reversed(final["messages"]):
-            if isinstance(msg, ToolMessage) and msg.content:
+            if isinstance(msg, AIMessage) and msg.content:
                 answer = msg.content
                 break
+        
 
     return {
         "answer":       answer,
