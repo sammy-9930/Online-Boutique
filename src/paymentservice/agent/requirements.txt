@@ -1,0 +1,9 @@
+langchain>=0.3.0
+langchain-core>=0.3.0
+langgraph>=0.2.0
+langchain-ollama>=0.2.0
+grpcio>=1.62.0
+grpcio-tools>=1.62.0
+grpcio-health-checking>=1.62.0
+protobuf>=4.25.0
+python-dotenv>=1.0.0
