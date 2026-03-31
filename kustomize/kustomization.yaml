@@ -26,7 +26,7 @@ components:
 # - components/alloydb
 # - components/single-shared-session
 # - components/spanner
-# - components/service-mesh-istio
+- components/service-mesh-istio
 # - components/without-loadgenerator
 # These must be run last and in this order
 # - components/container-images-tag
